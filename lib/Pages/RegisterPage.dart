@@ -158,6 +158,8 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 
   Future<void> RegisterUser() async {
+    await FirebaseAuth.instance
+        .createUserWithEmailAndPassword(email: email!, password: password!);
     FirebaseFirestore.instance.collection('users').doc(email).set({
       'email': email,
       'username': userName,
