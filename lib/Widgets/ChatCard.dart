@@ -72,9 +72,11 @@ class ChatCard extends StatelessWidget {
                       return Row(
                         children: [
                           Text(
-                            filteredMessages[0].From == from
-                                ? "You: "
-                                : "${Users[index].UserName}: ",
+                            filteredMessages.isEmpty
+                                ? "Tap to start chat"
+                                : filteredMessages[0].From == from
+                                    ? "You: "
+                                    : "${Users[index].UserName}: ",
                             style: const TextStyle(
                                 color: KPrimaryColor,
                                 fontWeight: FontWeight.bold),
@@ -83,7 +85,9 @@ class ChatCard extends StatelessWidget {
                             child: Text(
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
-                                filteredMessages[0].message),
+                                filteredMessages.isEmpty
+                                    ? ""
+                                    : filteredMessages[0].message),
                           )
                         ],
                       );
