@@ -1,16 +1,17 @@
-# chaty_app
+# Chaty
 
-A new Flutter project.
+Chaty is a modern chat application built with Flutter, offering a rich set of features for seamless communication. It provides functionalities for user authentication, dark mode support, and real-time message storage using Firebase.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- **Sign In and Registeration:** Secure user authentication with Firebase.
+- **Dark Mode:** Toggle between light and dark themes for a better user experience.
+- **Real-Time Messaging:** Store and order messages in real-time using Firestore.
 
-A few resources to get you started if this is your first Flutter project:
+## Installation
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Follow these steps to set up and run the Chaty application on your local machine:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/USERNAME/Chaty.git
