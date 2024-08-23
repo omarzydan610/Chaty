@@ -13,28 +13,37 @@ Chaty is a modern chat application built with Flutter, offering a rich set of fe
 
 ### Splash Screen
 
-![SplashScreen](assets/screenshots/SplashScreen.pngassets/screenshots/LoginPage.pngassets/screenshots/login_screen.png)
-
+![SplashScreen](assets/screenshots/SplashScreen.png) 
 
 ### Login Page
 
-![Login Page](assets/screenshots/LoginPage.pngassets/screenshots/login_screen.png)
+![Login Page](assets/screenshots/LoginPage.png)
 
+##### Login Page With Errors
 
-### Login Page With Errors
-
-![Login Page With Errors](assets/screenshots/LoginPageError.pngassets/screenshots/login\_screen.png)
-
+![Login Page With Errors](assets/screenshots/LoginPageError.png)
 
 ### Registeration Page
 
-![Registeration Page](assets/screenshots/RegisterationPage.pngassets/screenshots/login\_screen.png)
+![Registeration Page](assets/screenshots/RegisterationPage.png)
+
+### Chats Page (Light Mode)
+
+![Chats Page (Light Mode)](assets/screenshots/ChatsLight.png)
+
+### Menu (Light Mode)![Menu (Light Mode)](assets/screenshots/MenuLight.png)
 
 
-### Chats Page(Light Mode)
+### Conversation Page (light Mode)![Conversation Page (light Mode)](assets/screenshots/ConversationLight.png)
 
-![Chats Page(Light Mode)](assets/screenshots/ChatsLight.pngassets/screenshots/login\_screen.png)
 
+### Chats Page (Dark Mode)![Chats Page (Dark Mode)](assets/screenshots/ChatsDark.png)
+
+
+### Menu (Dark Mode)![Menu (Dark Mode)](assets/screenshots/MenuDark.png)
+
+
+### Conversation Page (Dark Mode)![Conversation Page (Dark Mode)Dark Mode](assets/screenshots/ConversationDark.png)
 
 
 ## Installation
@@ -46,5 +55,6 @@ Follow these steps to set up and run the Chaty application on your local machine
    git clone https://github.com/USERNAME/Chaty.git
    ```
 
+```
 
 ```
