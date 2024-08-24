@@ -2,20 +2,35 @@ import 'package:chaty/Constants.dart';
 import 'package:chaty/Models/MessageModel.dart';
 import 'package:chaty/Models/UserModel.dart';
 import 'package:chaty/Pages/ConversationPage.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class ChatCard extends StatelessWidget {
-  ChatCard(
-      {super.key,
-      required this.Users,
-      required this.index,
-      required this.from,
-      required this.MessagesStream});
+class ChatCard extends StatefulWidget {
+  ChatCard({
+    super.key,
+    required this.Users,
+    required this.index,
+    required this.from,
+  });
 
   final List<UserModel> Users;
   final int index;
   final String from;
-  final Stream MessagesStream;
+
+  @override
+  State<ChatCard> createState() => _ChatCardState();
+}
+
+class _ChatCardState extends State<ChatCard> {
+  late Stream MessagesStream;
+  @override
+  void initState() {
+    MessagesStream = FirebaseFirestore.instance
+        .collection("messages")
+        .orderBy("sentAt", descending: true)
+        .snapshots();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +42,8 @@ class ChatCard extends StatelessWidget {
             MaterialPageRoute(
               builder: (context) {
                 return ConversationPage(
-                  To: Users[index],
-                  From: from,
+                  To: widget.Users[widget.index],
+                  From: widget.from,
                 );
               },
             ),
@@ -41,7 +56,7 @@ class ChatCard extends StatelessWidget {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "@${Users[index].UserName}",
+                  "@${widget.Users[widget.index].UserName}",
                   style: const TextStyle(fontSize: 24),
                 ),
               ),
@@ -63,10 +78,12 @@ class ChatCard extends StatelessWidget {
                       List<Message> filteredMessages = [];
                       filteredMessages = MessagesList.where(
                         (message) {
-                          return ((message.From == from &&
-                                  message.To == Users[index].Email) ||
-                              (message.From == Users[index].Email &&
-                                  message.To == from));
+                          return ((message.From == widget.from &&
+                                  message.To ==
+                                      widget.Users[widget.index].Email) ||
+                              (message.From ==
+                                      widget.Users[widget.index].Email &&
+                                  message.To == widget.from));
                         },
                       ).toList();
                       return Row(
@@ -74,9 +91,9 @@ class ChatCard extends StatelessWidget {
                           Text(
                             filteredMessages.isEmpty
                                 ? "Tap to start chat"
-                                : filteredMessages[0].From == from
+                                : filteredMessages[0].From == widget.from
                                     ? "You: "
-                                    : "${Users[index].UserName}: ",
+                                    : "${widget.Users[widget.index].UserName}: ",
                             style: const TextStyle(
                                 color: KPrimaryColor,
                                 fontWeight: FontWeight.bold),

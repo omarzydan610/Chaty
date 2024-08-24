@@ -31,10 +31,6 @@ class _ChatsPageState extends State<ChatsPage>
         .orderBy("createdat")
         .snapshots();
     userName = getUserName(widget.email);
-    MessagesStream = FirebaseFirestore.instance
-        .collection("messages")
-        .orderBy("sentAt", descending: true)
-        .snapshots();
   }
 
   Widget build(BuildContext context) {
@@ -133,7 +129,6 @@ class _ChatsPageState extends State<ChatsPage>
                                     Users: Users,
                                     index: index,
                                     from: widget.email,
-                                    MessagesStream: MessagesStream,
                                   );
                                 }
                               },
