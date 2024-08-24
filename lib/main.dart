@@ -8,7 +8,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-late ThemeData darkbutton;
+late ThemeData isDark;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,7 +17,7 @@ void main() async {
   );
   ThemeNotifier themeNotifier = ThemeNotifier(lightMode);
   await themeNotifier.loadTheme();
-  darkbutton = themeNotifier.themedata;
+  isDark = themeNotifier.themedata;
   runApp(
     ChangeNotifierProvider<ThemeNotifier>(
       create: (_) => themeNotifier,

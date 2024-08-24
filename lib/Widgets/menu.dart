@@ -22,7 +22,7 @@ class menu extends StatefulWidget {
 }
 
 class _menuState extends State<menu> {
-  bool darkmode = (darkbutton == darkMode);
+  bool darkmode = (isDark == darkMode);
   @override
   void initState() {
     super.initState();
@@ -74,10 +74,10 @@ class _menuState extends State<menu> {
                       value: darkmode,
                       onChanged: (value) {
                         darkmode = !(darkmode);
-                        if (darkbutton == darkMode) {
-                          darkbutton == lightMode;
+                        if (isDark == darkMode) {
+                          isDark == lightMode;
                         } else {
-                          darkbutton == darkMode;
+                          isDark == darkMode;
                         }
                         setState(() {});
                         Provider.of<ThemeNotifier>(context, listen: false)
