@@ -6,6 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class ConversationPage extends StatelessWidget {
   ConversationPage({super.key, required this.To, required this.From});
   static String ID = "ChatPAge";
