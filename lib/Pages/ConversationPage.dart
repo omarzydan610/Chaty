@@ -37,7 +37,7 @@ class ConversationPage extends StatelessWidget {
       controller.clear();
       scrollController.animateTo(
         0,
-        duration: const Duration(seconds: 1),
+        duration: const Duration(milliseconds: 500),
         curve: Curves.easeIn,
       );
     }
